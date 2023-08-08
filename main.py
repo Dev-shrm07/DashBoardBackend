@@ -1,9 +1,7 @@
 from flask import Flask, jsonify
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-import json
-import os
-from bson import ObjectId  
+
 
 uri = "mongodb+srv://sharmakavyaop702:qsGaeuzAMbuWIQ6r@cluster0.zmpglyi.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -32,3 +30,5 @@ def get_data():
 def hello_world():
     return get_data()
 
+if __name__=="__main__":
+    app.run(debug=False)
